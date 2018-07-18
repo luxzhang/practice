@@ -240,7 +240,7 @@ public class AlgoriBase {
                 Double.parseDouble(s[1]) / Double.parseDouble(s[2]));
 	}
 	
-	@Test
+//	@Test
 	public void pra22() {
 		int[] a = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19};
 		int len = this.rank(9, a, 0, a.length, 1);
@@ -254,5 +254,26 @@ public class AlgoriBase {
 		if(key < a[mid]) return rank(key, a, lo, mid - 1, cir);
 		else if (key > a[mid]) return rank(key, a, mid + 1, hi, cir);
 		else return mid;
+	}
+	
+	@Test
+	public void pra24() {
+		Integer x = 7, y=2;
+		Integer divisor = this.calculcateCommonDivisor(x, y);
+		System.out.println(x + "和" +y + "的公约数：" +divisor);
+	}
+	
+	/**
+	 * @description ： 计算公约数（阿基米德原理）
+	 * @param x
+	 * @param y
+	 * @return  
+	 * @author：lux_zhang    
+	 * @date：2018年7月16日
+	 */
+	public Integer calculcateCommonDivisor(Integer x, Integer y) {
+		if(y == 1) return 1;
+		if(x % y == 0) return y;
+		return calculcateCommonDivisor(y, x % y);
 	}
 }
