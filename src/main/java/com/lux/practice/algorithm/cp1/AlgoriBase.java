@@ -256,7 +256,7 @@ public class AlgoriBase {
 		else return mid;
 	}
 	
-	@Test
+//	@Test
 	public void pra24() {
 		Integer x = 7, y=2;
 		Integer divisor = this.calculcateCommonDivisor(x, y);
@@ -275,5 +275,16 @@ public class AlgoriBase {
 		if(y == 1) return 1;
 		if(x % y == 0) return y;
 		return calculcateCommonDivisor(y, x % y);
+	}
+	
+	/**
+	 * @description ： 删除二分排序后数组中重复的元素
+	 * @author：lux_zhang    
+	 * @date：2018年7月24日
+	 */
+	@Test
+	public void pra29() {
+		//思路 因已排好序，故将数组中前一位与后一位进行比较，相同则清除后一位，
+		//然后继续与后一位进行比较，直到比较到数组结束
 	}
 }
