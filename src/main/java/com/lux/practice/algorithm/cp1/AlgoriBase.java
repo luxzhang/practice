@@ -9,6 +9,8 @@ import com.lux.practice.algorithm.utils.PrintUtils;
 
 /**
  * @author huanxin
+ * 
+ * 参考链接：https://www.cnblogs.com/gotodsp/p/4319865.html
  *
  */
 public class AlgoriBase {
@@ -272,6 +274,7 @@ public class AlgoriBase {
 	 * @date：2018年7月16日
 	 */
 	public Integer calculcateCommonDivisor(Integer x, Integer y) {
+		if(x==0 || y == 0) return 0;
 		if(y == 1) return 1;
 		if(x % y == 0) return y;
 		return calculcateCommonDivisor(y, x % y);
@@ -282,7 +285,7 @@ public class AlgoriBase {
 	 * @author：lux_zhang    
 	 * @date：2018年7月24日
 	 */
-	@Test
+//	@Test
 	public void pra29() {
 		//思路 因已排好序，故将数组中前一位与后一位进行比较，相同则清除后一位，
 		//然后继续与后一位进行比较，直到比较到数组结束
@@ -291,15 +294,26 @@ public class AlgoriBase {
 	/**
 	 * 设置N*N的布尔数组a[][]。i和j互质
 	 */
-	@Test
+//	@Test
 	public void pra30() {
 		//设置N*N的布尔数组a[][]。i和j互质
 		//实现原理：互质则i、j的最大公约数为1
 		boolean[][] a = new boolean[20][30];
 		for(int i=0;i<20;i++) {
 			for(int j=0;j<30;j++) {
-				
+				if(calculcateCommonDivisor(i, j) == 1) {
+					a[i][j] = true;
+					System.out.println("互质数，i：" + i + "，j：" + j);
+				} else {
+					a[i][j] = false;
+				}
 			}
 		}
+	}
+	
+	@Test
+	public void pra31() {
+		//TODO 随机连接。从命令行获取整数N及dubbo值p（0到1之间）作为参数，
+		//	在一个圆上画出大小为0.05且间距相等的N个点，然后将每对点按照概率p用灰线连接。
 	}
 }
